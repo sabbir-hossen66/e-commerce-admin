@@ -2,11 +2,12 @@ import { Outlet } from 'react-router-dom';
 
 
 
+
 const Root = () => {
 
   return (
     <div className="">
-      here route root
+     <div>Header is here</div>
     <Outlet></Outlet>
     <p>footer.</p>
     </div>
