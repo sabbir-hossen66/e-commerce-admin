@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
@@ -9,7 +10,9 @@ const Sidebar = () => {
 
       <div className="font-medium space-y-2">
         {/* Profile */}
-        <h2 className="cursor-pointer hover:text-gray-300">Profile</h2>
+        <Link to="/dashboard/profile" className="block hover:text-gray-300">
+          Profile
+        </Link>
 
         {/* Product Management with dropdown */}
         <div>
@@ -21,20 +24,27 @@ const Sidebar = () => {
             <span className="text-sm">{open ? "▲" : "▼"}</span>
           </h2>
 
-          {/* Dropdown */}
           {open && (
             <div className="ml-4 mt-2 space-y-1 text-sm text-gray-300">
-              <h3 className="cursor-pointer hover:text-white">➕ Product Add</h3>
-              <h3 className="cursor-pointer hover:text-white">📄 Product Detail</h3>
+              <Link to="/dashboard/product-add" className="block hover:text-white">
+                ➕ Product Add
+              </Link>
+              <Link to="/dashboard/product-detail" className="block hover:text-white">
+                📄 Product Detail
+              </Link>
             </div>
           )}
         </div>
 
         {/* Coupons */}
-        <h2 className="cursor-pointer hover:text-gray-300">Coupons</h2>
+        <Link to="/dashboard/coupons" className="block hover:text-gray-300">
+          Coupons
+        </Link>
 
         {/* User Manage */}
-        <h2 className="cursor-pointer hover:text-gray-300">User Manage</h2>
+        <Link to="/dashboard/user-manage" className="block hover:text-gray-300">
+          User Manage
+        </Link>
       </div>
     </div>
   );
